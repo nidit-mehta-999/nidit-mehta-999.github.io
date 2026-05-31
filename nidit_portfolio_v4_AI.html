@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Nidit Mehta - Lead SDET</title>
+    <meta name="description" content="Portfolio of Nidit Mehta, a Lead SDET with 6.5+ years of experience in test automation, IoT, AWS, AI-powered QE solutions, and embedded systems. Explore projects and skills in Python, Selenium, and Appium.">
+    <meta name="keywords" content="Nidit Mehta, Lead SDET, Test Automation, QA, IoT, AWS, Python, Selenium, Appium, Embedded Systems, Portfolio">
+    
+    <meta property="og:title" content="Nidit Mehta - Lead SDET">
+    <meta property="og:description" content="Portfolio of Nidit Mehta, a Lead SDET with 6+ years of experience in test automation, IoT, AWS, and embedded systems.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://raw.githubusercontent.com/your-username/your-username.github.io/main/image_7d9189.png"> <meta property="og:url" content="https://your-username.github.io"> <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #181E8C;
+            --primary-hover: #12166F;
+            --text: #0f172a;
+            --text-light: #64748b;
+            --bg: #f8fafc;
+            --bg-alt: #ffffff;
+            --border: #e2e8f0;
+            --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.07);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.07);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            overflow-x: hidden;
+            background-color: var(--bg);
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(248, 250, 252, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid transparent;
+        }
+        
+        .navbar.scrolled {
+            border-bottom-color: var(--border);
+            box-shadow: var(--shadow);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+        
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .menu-toggle .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            transition: all 0.3s ease-in-out;
+            background-color: var(--primary);
+            border-radius: 2px;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-top: 80px;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            color: var(--text);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+            max-width: 600px;
+        }
+
+        .hero-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .stat { text-align: center; }
+        .stat-number { display: block; font-size: 2rem; font-weight: 800; color: var(--primary); }
+        .stat-label { font-size: 0.9rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 1px; }
+        .stat-trigger { cursor: pointer; }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+        
+        .btn {
+            padding: 12px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 1rem;
+            border: 1px solid transparent;
+        }
+        
+        .btn-primary, .btn-secondary {
+            background: var(--bg-alt);
+            color: var(--primary);
+            border-color: var(--primary);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-primary:hover, .btn-secondary:hover {
+            transform: translateY(-2px);
+            background: var(--primary);
+            color: var(--bg-alt);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn i { transition: transform 0.3s ease; }
+        .btn:hover i { transform: scale(1.1) rotate(-10deg); }
+
+        /* Tech Visual */
+        .tech-visual {
+            position: relative;
+            width: 100%;
+            max-width: 450px;
+            aspect-ratio: 1 / 1;
+            margin: 0 auto;
+        }
+
+        .tech-circle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: clamp(80px, 18vw, 90px);
+            height: clamp(80px, 18vw, 90px);
+            margin: calc(clamp(80px, 18vw, 90px) / -2);
+            background: var(--bg-alt);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border);
+            animation: orbit 20s linear infinite;
+        }
+
+        .tech-circle:hover {
+            transform: scale(1.15) !important;
+            animation-play-state: paused !important;
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary);
+            z-index: 10;
+        }
+        
+        .tech-circle i {
+            font-size: clamp(1.5rem, 5vw, 1.8rem);
+            margin-bottom: 0.4rem;
+            color: var(--primary);
+        }
+
+        /* FIXED: Centering for multi-word text */
+        .tech-circle span { 
+            font-size: 0.75rem; 
+            font-weight: 600; 
+            color: var(--text-light); 
+            text-align: center;
+        }
+
+        .center-qa-graphic {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: clamp(120px, 30vw, 150px);
+            height: clamp(120px, 30vw, 150px);
+            transform: translate(-50%, -50%);
+            background: var(--bg-alt);
+            border-radius: 50%;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border);
+        }
+        
+        .qa-svg { width: 100%; height: 100%; overflow: visible; }
+        
+        .qa-text {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 28px;
+            fill: var(--primary);
+        }
+
+        .circuit-line {
+            stroke: var(--border);
+            stroke-width: 1.5;
+        }
+
+        .current-dot {
+            fill: var(--primary);
+            opacity: 0.7;
+        }
+
+        .tech-circle:nth-child(1) { animation-name: orbit1; }
+        .tech-circle:nth-child(2) { animation-name: orbit2; }
+        .tech-circle:nth-child(3) { animation-name: orbit3; }
+        .tech-circle:nth-child(4) { animation-name: orbit4; }
+        .tech-circle:nth-child(5) { animation-name: orbit5; }
+        .tech-circle:nth-child(6) { animation-name: orbit6; }
+        .tech-circle:nth-child(7) { animation-name: orbit7; }
+
+        @keyframes orbit1 { from { transform: rotate(0deg) translateX(160px) rotate(0deg); } to { transform: rotate(360deg) translateX(160px) rotate(-360deg); } }
+        @keyframes orbit2 { from { transform: rotate(51.4deg) translateX(160px) rotate(-51.4deg); } to { transform: rotate(411.4deg) translateX(160px) rotate(-411.4deg); } }
+        @keyframes orbit3 { from { transform: rotate(102.8deg) translateX(160px) rotate(-102.8deg); } to { transform: rotate(462.8deg) translateX(160px) rotate(-462.8deg); } }
+        @keyframes orbit4 { from { transform: rotate(154.2deg) translateX(160px) rotate(-154.2deg); } to { transform: rotate(514.2deg) translateX(160px) rotate(-514.2deg); } }
+        @keyframes orbit5 { from { transform: rotate(205.6deg) translateX(160px) rotate(-205.6deg); } to { transform: rotate(565.6deg) translateX(160px) rotate(-565.6deg); } }
+        @keyframes orbit6 { from { transform: rotate(257deg) translateX(160px) rotate(-257deg); } to { transform: rotate(617deg) translateX(160px) rotate(-617deg); } }
+        @keyframes orbit7 { from { transform: rotate(308.4deg) translateX(160px) rotate(-308.4deg); } to { transform: rotate(668.4deg) translateX(160px) rotate(-668.4deg); } }
+        
+        /* Sections */
+        .section { padding: 6rem 0; }
+        .section:nth-child(even) { background: var(--bg-alt); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        .section-title { text-align: center; font-size: clamp(2rem, 6vw, 2.5rem); font-weight: 800; color: var(--text); margin-bottom: 4rem; position: relative; }
+        .section-title::after { content: ''; position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); width: 60px; height: 4px; background: var(--primary); border-radius: 2px; }
+
+        .about-grid { display: grid; grid-template-columns: 1fr; }
+        .about-text { font-size: 1.1rem; line-height: 1.8; color: var(--text-light); max-width: 800px; margin: 0 auto; text-align: center; }
+        .about-text p { margin-bottom: 1.5rem; }
+
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+        .skill-category { background: var(--bg-alt); padding: 2rem; border-radius: 12px; box-shadow: var(--shadow); transition: all 0.3s ease; border: 1px solid var(--border); }
+        .skill-category:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+        .skill-category h3 { color: var(--text); margin-bottom: 1.5rem; font-size: 1.3rem; }
+        .skill-items { display: flex; flex-wrap: wrap; gap: 0.8rem; }
+        .skill-tag { background: var(--bg); color: var(--text-light); padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 500; border: 1px solid var(--border); transition: all 0.3s ease; }
+        .skill-tag:hover { background: var(--primary); color: var(--bg-alt); border-color: var(--primary); transform: translateY(-2px); }
+
+        .timeline { position: relative; max-width: 900px; margin: 0 auto; }
+        .timeline::before { content: ''; position: absolute; left: 50%; top: 0; bottom: 0; width: 3px; background: var(--border); transform: translateX(-50%); border-radius: 2px; }
+        .timeline-item { position: relative; margin-bottom: 3rem; }
+        .timeline-item:nth-child(odd) .timeline-content { margin-right: calc(50% + 30px); text-align: right; }
+        .timeline-item:nth-child(even) .timeline-content { margin-left: calc(50% + 30px); }
+        .timeline-marker { position: absolute; left: 50%; top: 5px; width: 18px; height: 18px; background: var(--bg); border: 4px solid var(--border); border-radius: 50%; transform: translateX(-50%); z-index: 2; transition: all 0.3s ease; }
+        .timeline-item:hover .timeline-marker { border-color: var(--primary); }
+        .timeline-content { background: var(--bg-alt); padding: 2rem; border-radius: 12px; box-shadow: var(--shadow); transition: all 0.3s ease; border: 1px solid var(--border); }
+        .timeline-content:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); border-color: var(--primary); }
+        .timeline-title { font-size: 1.4rem; font-weight: 700; color: var(--text); margin-bottom: 0.5rem; }
+        .timeline-company { color: var(--primary); font-weight: 600; margin-bottom: 0.3rem; }
+        .timeline-date { color: var(--text-light); font-size: 0.9rem; margin-bottom: 1rem; }
+        .timeline-description { color: var(--text-light); line-height: 1.6; }
+
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+        .project-card { background: var(--bg-alt); border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); transition: all 0.3s ease; border: 1px solid var(--border); display: flex; flex-direction: column; }
+        .project-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-lg); border-color: var(--primary); }
+        .project-header { padding: 2rem; background: var(--primary); color: var(--bg-alt); text-align: center; }
+        .project-icon { font-size: 3rem; margin-bottom: 1rem; }
+        .project-title { font-size: 1.4rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .project-content { padding: 2rem; flex-grow: 1; }
+        .project-description { color: var(--text-light); margin-bottom: 1.5rem; line-height: 1.6; }
+        .project-tech { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
+        .tech-badge { background: var(--bg); color: var(--primary); padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600; }
+        .project-content ul { list-style-type: '✓ '; padding-left: 1.2rem; color: var(--text-light); text-align: left; }
+        .project-content li { margin-bottom: 0.5rem; }
+
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; }
+        .contact-info { display: flex; flex-direction: column; gap: 1.5rem; }
+        .contact-item { display: flex; align-items: center; gap: 1rem; padding: 1.5rem; background: var(--bg-alt); border-radius: 12px; box-shadow: var(--shadow); transition: all 0.3s ease; border: 1px solid var(--border); }
+        .contact-item:hover { transform: translateX(10px); border-color: var(--primary); }
+        .contact-icon { width: 50px; height: 50px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--bg-alt); font-size: 1.2rem; flex-shrink: 0; }
+        .contact-details h3 { color: var(--text); font-weight: 600; margin-bottom: 0.3rem; }
+        .contact-details p, .contact-details a { color: var(--text-light); text-decoration: none; transition: color 0.3s ease; word-break: break-all; }
+        .contact-details a:hover { color: var(--primary); }
+        .cta-card { background: var(--primary); padding: 3rem; border-radius: 12px; text-align: center; color: var(--bg-alt); display: flex; flex-direction: column; justify-content: center; align-items: center; }
+        .cta-card h3 { font-size: 1.8rem; margin-bottom: 1rem; }
+        .cta-card p { margin-bottom: 2rem; opacity: 0.8; max-width: 400px; }
+        .cta-card .btn-primary { background: var(--bg-alt); color: var(--primary); }
+        .cta-card .btn-primary:hover { background: var(--bg); transform: translateY(-3px) scale(1.05); }
+
+        .footer { background: var(--text); color: var(--bg-alt); padding: 3rem 0; text-align: center; }
+        .footer-content { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 1.5rem; }
+        .social-links { display: flex; gap: 1rem; }
+        .social-link { width: 40px; height: 40px; background: var(--text-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--bg-alt); text-decoration: none; transition: all 0.3s ease; }
+        .social-link:hover { transform: translateY(-3px) scale(1.1); box-shadow: 0 4px 10px rgba(0,0,0, 0.2); background: var(--primary); }
+
+        .stat-wrapper { position: relative; }
+        .stat-tooltip { position: absolute; bottom: calc(100% + 10px); left: 50%; transform: translateX(-50%) translateY(10px); background: var(--bg-alt); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; box-shadow: var(--shadow-lg); width: 320px; z-index: 1000; opacity: 0; visibility: hidden; pointer-events: none; transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s; }
+        .stat-tooltip::after { content: ''; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); border: 8px solid transparent; border-top-color: var(--bg-alt); filter: drop-shadow(0 1px 1px rgba(0,0,0,0.05));}
+        .stat-tooltip.visible { opacity: 1; visibility: visible; pointer-events: auto; transform: translateX(-50%) translateY(0); }
+        .stat-tooltip h4 { color: var(--text); font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem; text-align: center; }
+        .tooltip-item-list { display: flex; flex-direction: column; gap: 0.8rem; }
+        .tooltip-item { display: flex; align-items: center; gap: 0.8rem; color: var(--text-light); font-size: 0.9rem; line-height: 1.4; }
+        .tooltip-item i { color: var(--primary); width: 16px; text-align: center; flex-shrink: 0; }
+        .tooltip-item span { flex: 1; text-align: left; }
+
+        .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        /* Responsive Design */
+        @media (max-width: 992px) { 
+            .hero-container { grid-template-columns: 1fr; text-align: center; gap: 4rem; } 
+            .hero-content { order: 2; }
+            .tech-visual { order: 1; max-width: 400px; }
+            .hero-description { margin-left: auto; margin-right: auto; } 
+            .hero-stats, .hero-buttons { justify-content: center; } 
+            .contact-grid { grid-template-columns: 1fr; } 
+            .timeline::before { left: 20px; transform: translateX(0); }
+            .timeline-item { padding: 0 0 0 40px !important; margin-bottom: 3rem; text-align: left !important; }
+            .timeline-item .timeline-content { margin: 0; }
+            .timeline-marker { left: 20px; }
+        }
+
+        @media (max-width: 768px) { 
+            .nav-menu { display: flex; flex-direction: column; align-items: center; justify-content: center; position: fixed; top: 0; left: -100%; width: 100%; height: 100vh; background: rgba(248, 250, 252, 0.98); backdrop-filter: blur(10px); transition: left 0.4s ease-in-out; gap: 2rem; } 
+            .nav-menu.active { left: 0; } 
+            .nav-link { font-size: 1.5rem; } 
+            .menu-toggle { display: block; } 
+            .menu-toggle.is-active .bar:nth-child(2) { opacity: 0; } 
+            .menu-toggle.is-active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); } 
+            .menu-toggle.is-active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); } 
+            .footer-content { justify-content: center; }
+            .stat-tooltip { width: 90vw; max-width: 300px; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); bottom: auto; max-height: 80vh; overflow-y: auto; } 
+            .stat-tooltip::after { display: none; } 
+            .stat-tooltip.visible { transform: translate(-50%, -50%); } 
+            .tech-visual { max-width: 350px; }
+            @keyframes orbit1 { from { transform: rotate(0deg) translateX(130px) rotate(0deg); } to { transform: rotate(360deg) translateX(130px) rotate(-360deg); } }
+            @keyframes orbit2 { from { transform: rotate(51.4deg) translateX(130px) rotate(-51.4deg); } to { transform: rotate(411.4deg) translateX(130px) rotate(-411.4deg); } }
+            @keyframes orbit3 { from { transform: rotate(102.8deg) translateX(130px) rotate(-102.8deg); } to { transform: rotate(462.8deg) translateX(130px) rotate(-462.8deg); } }
+            @keyframes orbit4 { from { transform: rotate(154.2deg) translateX(130px) rotate(-154.2deg); } to { transform: rotate(514.2deg) translateX(130px) rotate(-514.2deg); } }
+            @keyframes orbit5 { from { transform: rotate(205.6deg) translateX(130px) rotate(-205.6deg); } to { transform: rotate(565.6deg) translateX(130px) rotate(-565.6deg); } }
+            @keyframes orbit6 { from { transform: rotate(257deg) translateX(130px) rotate(-257deg); } to { transform: rotate(617deg) translateX(130px) rotate(-617deg); } }
+            @keyframes orbit7 { from { transform: rotate(308.4deg) translateX(130px) rotate(-308.4deg); } to { transform: rotate(668.4deg) translateX(130px) rotate(-668.4deg); } }
+        }
+        
+        @media (max-width: 480px) { 
+            .container, .nav-container { padding: 0 1rem; } 
+            .hero-buttons { flex-direction: column; align-items: center; gap: 0.8rem; } 
+            .hero-stats { flex-direction: column; gap: 1.5rem; align-items: center; } 
+            .tech-visual { max-width: 300px; }
+            @keyframes orbit1 { from { transform: rotate(0deg) translateX(110px) rotate(0deg); } to { transform: rotate(360deg) translateX(110px) rotate(-360deg); } }
+            @keyframes orbit2 { from { transform: rotate(51.4deg) translateX(110px) rotate(-51.4deg); } to { transform: rotate(411.4deg) translateX(110px) rotate(-411.4deg); } }
+            @keyframes orbit3 { from { transform: rotate(102.8deg) translateX(110px) rotate(-102.8deg); } to { transform: rotate(462.8deg) translateX(110px) rotate(-462.8deg); } }
+            @keyframes orbit4 { from { transform: rotate(154.2deg) translateX(110px) rotate(-154.2deg); } to { transform: rotate(514.2deg) translateX(110px) rotate(-514.2deg); } }
+            @keyframes orbit5 { from { transform: rotate(205.6deg) translateX(110px) rotate(-205.6deg); } to { transform: rotate(565.6deg) translateX(110px) rotate(-565.6deg); } }
+            @keyframes orbit6 { from { transform: rotate(257deg) translateX(110px) rotate(-257deg); } to { transform: rotate(617deg) translateX(110px) rotate(-617deg); } }
+            @keyframes orbit7 { from { transform: rotate(308.4deg) translateX(110px) rotate(-308.4deg); } to { transform: rotate(668.4deg) translateX(110px) rotate(-668.4deg); } }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">Nidit Mehta</a>
+            <div class="menu-toggle" id="mobile-menu" role="button" aria-expanded="false" aria-controls="nav-menu">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li><li><a href="#about" class="nav-link">About</a></li><li><a href="#skills" class="nav-link">Skills</a></li><li><a href="#experience" class="nav-link">Experience</a></li><li><a href="#projects" class="nav-link">Projects</a></li><li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header id="home" class="hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1>Nidit Mehta</h1>
+                <div class="hero-subtitle">Lead SDET</div>
+                <p class="hero-description">6.5+ years of experience in Quality Engineering and Test Automation across IoT, Web, Mobile, API, AWS Cloud, and Embedded systems. Expertise in automation framework design, QA strategy, CI/CD integration, and building AI-powered solutions to enhance QE productivity.</p>
+                <div class="hero-stats">
+                    <div class="stat"><span class="stat-number">6.5+</span><span class="stat-label">Years Experience</span></div>
+                    <div class="stat"><span class="stat-number">10+</span><span class="stat-label">Projects</span></div>
+                    <div class="stat stat-wrapper">
+                        <span class="stat-number">5</span><span class="stat-label stat-trigger">Awards</span>
+                        <div class="stat-tooltip">
+                            <h4>Key Achievements</h4>
+                            <div class="tooltip-item-list">
+                                <div class="tooltip-item"><i class="fas fa-trophy"></i><span>3x Pat on the Back Award</span></div>
+                                <div class="tooltip-item"><i class="fas fa-star"></i><span>1x Emerging Star Award</span></div>
+                                <div class="tooltip-item"><i class="fas fa-medal"></i><span>1x Core Value Champion</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stat stat-wrapper">
+                        <span class="stat-number">2</span><span class="stat-label stat-trigger">Certifications</span>
+                        <div class="stat-tooltip">
+                            <h4>Professional Certifications</h4>
+                            <div class="tooltip-item-list">
+                                <div class="tooltip-item"><i class="fab fa-python"></i><span><strong>Cisco PCAP Certified</strong><br>Certified Associate in Python Programming</span></div>
+                                <div class="tooltip-item"><i class="fas fa-brain"></i><span><strong>Udemy – The Complete Prompt Engineering for AI Bootcamp</strong><br>2025</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary"><i class="fas fa-rocket"></i>View Projects</a>
+                    <a href="#contact" class="btn btn-secondary"><i class="fas fa-envelope"></i>Get In Touch</a>
+                </div>
+            </div>
+            <div class="tech-visual">
+                <div class="tech-circle"><i class="fas fa-mobile-alt"></i><span>Appium</span></div>
+                <div class="tech-circle"><i class="fas fa-server"></i><span>API</span></div>
+                <div class="tech-circle"><i class="fas fa-vial"></i><span>PyTest</span></div>
+                <div class="tech-circle"><i class="fas fa-microchip"></i><span>Embedded</span></div>
+                <div class="tech-circle"><i class="fab fa-python"></i><span>Python</span></div>
+                <div class="tech-circle"><i class="fas fa-globe"></i><span>Selenium</span></div>
+                <div class="tech-circle"><i class="fas fa-robot"></i><span>Robot Framework</span></div>
+                <div class="center-qa-graphic">
+                    <svg class="qa-svg" viewBox="0 0 120 120">
+                        <g class="circuit-background">
+                            <line class="circuit-line" x1="30" y1="20" x2="30" y2="100"/>
+                            <line class="circuit-line" x1="60" y1="20" x2="60" y2="100"/>
+                            <line class="circuit-line" x1="90" y1="20" x2="90" y2="100"/>
+                            <line class="circuit-line" x1="20" y1="30" x2="100" y2="30"/>
+                            <line class="circuit-line" x1="20" y1="60" x2="100" y2="60"/>
+                            <line class="circuit-line" x1="20" y1="90" x2="100" y2="90"/>
+                            <path id="current-path-1" d="M 20 60 L 100 60" fill="none" />
+                            <circle r="2" class="current-dot">
+                                <animateMotion dur="3s" repeatCount="indefinite" rotate="auto">
+                                    <mpath href="#current-path-1" />
+                                </animateMotion>
+                            </circle>
+                             <path id="current-path-2" d="M 60 100 L 60 20" fill="none" />
+                            <circle r="2" class="current-dot">
+                                <animateMotion dur="3s" begin="-1.5s" repeatCount="indefinite" rotate="auto">
+                                    <mpath href="#current-path-2" />
+                                </animateMotion>
+                            </circle>
+                        </g>
+                        <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" class="qa-text">QA</text>
+                    </svg>
+                </div>
+            </div>
+        </main>
+    </header>
+
+    <main>
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title fade-in">About Me</h2>
+                <div class="about-grid">
+                    <div class="about-text fade-in">
+                        <p>I am a Lead SDET with 6.5+ years of experience in Quality Engineering and Test Automation across diverse domains including IoT, Web, Mobile, API testing, AWS Cloud, and Embedded systems. My expertise lies in designing robust automation frameworks, leading QA strategies, and seamlessly integrating CI/CD pipelines.</p>
+                        <p>With hands-on experience in Python, Selenium, Appium, Robot Framework, and PyTest, I have a strong foundation in both manual and automation testing methodologies. I've successfully led teams, optimized testing processes, and delivered high-quality solutions that drive efficiency and reliability.</p>
+                        <p>I also have hands-on experience building AI-powered solutions and publishing AI agents that streamline testing activities — including Test Case Generation, Test Case Review, Test Script Generation, Bug Assistance, and Test Report Summarization — enabling teams to enhance QE productivity and focus on higher-value work.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section">
+            <div class="container">
+                <h2 class="section-title fade-in">Skills & Expertise</h2>
+                <div class="skills-grid">
+                    <div class="skill-category fade-in"><h3>AI</h3><div class="skill-items"><span class="skill-tag">AI Fundamentals</span><span class="skill-tag">Onyx AI</span><span class="skill-tag">M365 Copilot</span><span class="skill-tag">Copilot Studio</span></div></div>
+                    <div class="skill-category fade-in"><h3>Programming Languages</h3><div class="skill-items"><span class="skill-tag">Python</span></div></div>
+                    <div class="skill-category fade-in"><h3>Automation Frameworks</h3><div class="skill-items"><span class="skill-tag">Robot Framework</span><span class="skill-tag">PyTest</span><span class="skill-tag">Selenium</span><span class="skill-tag">Appium</span><span class="skill-tag">In-house Hybrid Framework</span></div></div>
+                    <div class="skill-category fade-in"><h3>Embedded Protocols</h3><div class="skill-items"><span class="skill-tag">UART</span><span class="skill-tag">I2C</span><span class="skill-tag">SPI</span></div></div>
+                    <div class="skill-category fade-in"><h3>Cloud & APIs</h3><div class="skill-items"><span class="skill-tag">AWS (boto3)</span><span class="skill-tag">REST API</span><span class="skill-tag">Postman</span></div></div>
+                    <div class="skill-category fade-in"><h3>CI/CD</h3><div class="skill-items"><span class="skill-tag">Jenkins</span><span class="skill-tag">Docker</span></div></div>
+                    <div class="skill-category fade-in"><h3>Testing Types</h3><div class="skill-items"><span class="skill-tag">Functional Testing</span><span class="skill-tag">Regression Testing</span><span class="skill-tag">API Testing</span><span class="skill-tag">End-to-End Testing</span><span class="skill-tag">Integration Testing</span><span class="skill-tag">System Testing</span><span class="skill-tag">UAT</span><span class="skill-tag">Sanity</span><span class="skill-tag">Smoke</span></div></div>
+                    <div class="skill-category fade-in"><h3>Tools</h3><div class="skill-items"><span class="skill-tag">GitLab</span><span class="skill-tag">GitHub</span><span class="skill-tag">BitBucket</span><span class="skill-tag">TestRail</span><span class="skill-tag">JIRA</span><span class="skill-tag">Confluence</span><span class="skill-tag">Raspberry Pi</span><span class="skill-tag">Minicom</span><span class="skill-tag">Xcode</span><span class="skill-tag">Segger IDE</span></div></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="section">
+            <div class="container">
+                <h2 class="section-title fade-in">Professional Experience</h2>
+                <div class="timeline">
+                    <div class="timeline-item fade-in"><div class="timeline-marker"></div><div class="timeline-content"><h3 class="timeline-title">Lead SDET</h3><div class="timeline-company">ACL Digital</div><div class="timeline-date">Jul 2025 – Present</div><div class="timeline-description">Leading automation initiatives, QA strategy execution, and framework optimization across projects. Mentoring team members, conducting technical interviews, and driving CI/CD and quality engineering best practices.</div></div></div>
+                    <div class="timeline-item fade-in"><div class="timeline-marker"></div><div class="timeline-content"><h3 class="timeline-title">Sr. SDET</h3><div class="timeline-company">Volansys Technologies (An ACL Digital Company)</div><div class="timeline-date">Apr 2024 – Jun 2025</div><div class="timeline-description">Performed code reviews and enhanced automation frameworks, pipelines, and test efficiency. Collaborated with cross-functional teams and mentored engineers to improve delivery quality.</div></div></div>
+                    <div class="timeline-item fade-in"><div class="timeline-marker"></div><div class="timeline-content"><h3 class="timeline-title">SDET</h3><div class="timeline-company">Volansys Technologies (An ACL Digital Company)</div><div class="timeline-date">Apr 2022 – Mar 2024</div><div class="timeline-description">Developed and maintained automation frameworks for Web, Mobile, API, and IoT testing. Built and executed end-to-end regression suites to improve test coverage and reliability.</div></div></div>
+                    <div class="timeline-item fade-in"><div class="timeline-marker"></div><div class="timeline-content"><h3 class="timeline-title">Associate Engineer</h3><div class="timeline-company">Volansys Technologies</div><div class="timeline-date">Feb 2020 – Mar 2022</div><div class="timeline-description">Executed manual and automated testing activities across multiple products and platforms. Contributed to test planning, automation development, and QA process improvements.</div></div></div>
+                    <div class="timeline-item fade-in"><div class="timeline-marker"></div><div class="timeline-content"><h3 class="timeline-title">Trainee Engineer</h3><div class="timeline-company">Volansys Technologies</div><div class="timeline-date">Nov 2019 – Jan 2020</div><div class="timeline-description">Assisted in automation development, regression testing, and test execution activities. Supported defect validation, documentation, and test reporting efforts.</div></div></div>
+                    <div class="timeline-item fade-in"><div class="timeline-marker"></div><div class="timeline-content"><h3 class="timeline-title">Embedded Engineer</h3><div class="timeline-company">CSK Infotronix</div><div class="timeline-date">May 2019 – Oct 2019</div><div class="timeline-description">Developed embedded software modules and integrated hardware peripherals and sensors. Performed system-level testing and validation to ensure hardware-software compatibility.</div></div></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <div class="container">
+                <h2 class="section-title fade-in">Major Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card fade-in"><div class="project-header"><div class="project-icon"><i class="fas fa-robot"></i></div><h3 class="project-title">AI Agents in QE Ecosystem</h3></div><div class="project-content"><p class="project-description">Developed and published AI-powered agents to support Quality Engineering activities, enabling teams to improve productivity and focus on higher-value testing work.</p><div class="project-tech"><span class="tech-badge">Onyx AI</span><span class="tech-badge">Copilot Studio</span><span class="tech-badge">M365 Copilot</span><span class="tech-badge">LLMs</span><span class="tech-badge">AI Agents</span></div><ul><li>Evaluated AI platforms and LLMs based on project requirements, capabilities, and output quality.</li><li>Defined architecture, workflows, and evaluation criteria for Test Case Generator and Test Case Reviewer agents.</li><li>Built and validated agents for Test Case Generation, Review, Script Generation, Bug Assistance, and Report Summarization.</li><li>Conducted pilot programs, gathered feedback, and drove cross-team adoption and knowledge-sharing.</li></ul></div></div>
+                    <div class="project-card fade-in"><div class="project-header"><div class="project-icon"><i class="fas fa-smoking-ban"></i></div><h3 class="project-title">IoT Smart Smoke/CO Detector</h3></div><div class="project-content"><p class="project-description">Comprehensive automation for an IoT-based smoke/CO detection system, covering mobile app integration, push notifications, and cloud service validation.</p><div class="project-tech"><span class="tech-badge">Robot Framework</span><span class="tech-badge">Appium</span><span class="tech-badge">AWS</span><span class="tech-badge">Python (boto3)</span><span class="tech-badge">RS232</span></div><ul><li>Automated mobile app testing for Android/iOS platforms.</li><li>Implemented end-to-end push notification validation.</li><li>Created automated scripts for onboarding and regression testing.</li><li>Validated Firmware OTA and Alexa skill functionality.</li></ul></div></div>
+                    <div class="project-card fade-in"><div class="project-header"><div class="project-icon"><i class="fas fa-home"></i></div><h3 class="project-title">Smart Home Security Ecosystem</h3></div><div class="project-content"><p class="project-description">Complete IoT ecosystem automation including Smart TV integration, camera systems, and rule-based trigger mechanisms for comprehensive home security.</p><div class="project-tech"><span class="tech-badge">PyTest</span><span class="tech-badge">API Testing</span><span class="tech-badge">Smart TV</span><span class="tech-badge">IoT APIs</span><span class="tech-badge">UI Automation</span></div><ul><li>Automated Smart TV Camera app using UI testing.</li><li>Implemented comprehensive API testing for IoT devices.</li><li>Developed reusable automation utilities for scalability.</li><li>Created end-to-end, regression, smoke, and UAT test suites.</li></ul></div></div>
+                    <div class="project-card fade-in"><div class="project-header"><div class="project-icon"><i class="fas fa-cloud"></i></div><h3 class="project-title">Cloud Content Management</h3></div><div class="project-content"><p class="project-description">Enterprise-grade content management system for Android devices across multiple client locations with a centralized web portal management.</p><div class="project-tech"><span class="tech-badge">Selenium</span><span class="tech-badge">Appium</span><span class="tech-badge">Android</span><span class="tech-badge">Web App</span><span class="tech-badge">Jenkins</span></div><ul><li>Built a comprehensive web and mobile automation framework from scratch.</li><li>Developed a feature-based web app for account management.</li><li>Integrated automation with an internal testing framework.</li><li>Provided technical support and troubleshooting for the team.</li></ul></div></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container">
+                <h2 class="section-title fade-in">Let's Connect</h2>
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <div class="contact-item fade-in"><div class="contact-icon"><i class="fas fa-envelope"></i></div><div class="contact-details"><h3>Email</h3><p><a href="mailto:niditmehta569@gmail.com">niditmehta569@gmail.com</a></p></div></div>
+                        <div class="contact-item fade-in"><div class="contact-icon"><i class="fab fa-linkedin"></i></div><div class="contact-details"><h3>LinkedIn</h3><p><a href="https://linkedin.com/in/nidit-mehta" target="_blank" rel="noopener noreferrer">linkedin.com/in/nidit-mehta</a></p></div></div>
+                    </div>
+                    <div class="cta-card fade-in">
+                        <h3>Ready to Collaborate?</h3>
+                        <p>I'm passionate about building robust automation solutions and leading high-performing QA teams. Let's discuss how I can contribute to your organization's success.</p>
+                        <a href="mailto:niditmehta569@gmail.com?subject=Opportunity%20Discussion&body=Hi%20Nidit%2C%20I'd%20like%20to%20discuss%20a%20potential%20opportunity%20with%20you." class="btn btn-primary"><i class="fas fa-paper-plane"></i>Start Conversation</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>&copy; 2025 Nidit Mehta. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://linkedin.com/in/nidit-mehta" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:niditmehta569@gmail.com" class="social-link" aria-label="Email Nidit Mehta"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navbar = document.getElementById('navbar');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navMenu = document.getElementById('nav-menu');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('section[id], header[id]');
+            const fadeInElements = document.querySelectorAll('.fade-in');
+
+            window.addEventListener('scroll', () => {
+                navbar.classList.toggle('scrolled', window.scrollY > 50);
+            });
+
+            mobileMenu.addEventListener('click', () => {
+                mobileMenu.classList.toggle('is-active');
+                navMenu.classList.toggle('active');
+                document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+            });
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (navMenu.classList.contains('active')) {
+                        mobileMenu.classList.remove('is-active');
+                        navMenu.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                });
+            });
+
+            const activateNavOnScroll = () => {
+                let currentSectionId = '';
+                sections.forEach(section => {
+                    if (window.scrollY >= section.offsetTop - 150) {
+                        currentSectionId = section.getAttribute('id');
+                    }
+                });
+                navLinks.forEach(link => {
+                    link.classList.toggle('active', link.getAttribute('href').includes(currentSectionId));
+                });
+            };
+            window.addEventListener('scroll', activateNavOnScroll);
+            activateNavOnScroll();
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            fadeInElements.forEach(el => observer.observe(el));
+            
+            const statWrappers = document.querySelectorAll('.stat-wrapper');
+            statWrappers.forEach(wrapper => {
+                const tooltip = wrapper.querySelector('.stat-tooltip');
+                if (tooltip) {
+                    let tooltipTimeout;
+                    const showTooltip = () => { clearTimeout(tooltipTimeout); tooltip.classList.add('visible'); };
+                    const hideTooltip = () => { tooltipTimeout = setTimeout(() => { tooltip.classList.remove('visible'); }, 200); };
+                    
+                    wrapper.addEventListener('mouseenter', showTooltip);
+                    wrapper.addEventListener('mouseleave', hideTooltip);
+                    wrapper.addEventListener('click', (e) => {
+                        if (window.innerWidth <= 768) { e.preventDefault(); tooltip.classList.toggle('visible'); }
+                    });
+                }
+            });
+            document.addEventListener('click', (e) => {
+                if (window.innerWidth <= 768) {
+                    statWrappers.forEach(wrapper => {
+                        if (!wrapper.contains(e.target)) {
+                            wrapper.querySelector('.stat-tooltip')?.classList.remove('visible');
+                        }
+                    });
+                }
+            });
+            
+            console.log('✅ Nidit Mehta Portfolio | Production Ready.');
+        });
+    </script>
+</body>
+</html>
